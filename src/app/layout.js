@@ -1,6 +1,14 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-
+import CleverTapProvider from "./components/CleverTapProvider"; // Import the provider
+import ServiceWorkerRegister from "./components/ServiceWorkerRegister";
+import CleverTapIntegration from "./components/CleverTapIntegration";
+import CsvUploader from "./components/CsvUploader";
+import CleverTapObjectIdExtractor from "./components/objectid_extracter"
+import CleverTapDemerge from "./components/demerge";
+import SignedCall from "./components/SignedCall";
+import CsvToApiUploader from "./components/CsvToApiUploader";
+// import SignedCall from "./components/SignedCall";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -22,6 +30,15 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        
+        <CleverTapProvider /> 
+        <ServiceWorkerRegister />
+        <SignedCall />
+        <CleverTapIntegration/>
+        {/* <CsvUploader/>
+        <CleverTapObjectIdExtractor/>
+        <CleverTapDemerge/>
+        <CsvToApiUploader/> */}
         {children}
       </body>
     </html>
