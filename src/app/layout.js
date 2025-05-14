@@ -8,6 +8,7 @@ import CleverTapObjectIdExtractor from "./components/objectid_extracter"
 import CleverTapDemerge from "./components/demerge";
 import SignedCall from "./components/SignedCall";
 import CsvToApiUploader from "./components/CsvToApiUploader";
+import NativeDisplayPage from "./components/NativeDisplayPage";
 // import SignedCall from "./components/SignedCall";
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,8 +34,11 @@ export default function RootLayout({ children }) {
         
         <CleverTapProvider /> 
         <ServiceWorkerRegister />
+        <NativeDisplayPage/>
+        {/* <CleverTapProvider /> 
+        <ServiceWorkerRegister />
         <SignedCall />
-        <CleverTapIntegration/>
+        <CleverTapIntegration/> */}
         {/* <CsvUploader/>
         <CleverTapObjectIdExtractor/>
         <CleverTapDemerge/>
